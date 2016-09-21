@@ -5,4 +5,13 @@
 	<groupId>com.castiel.project</groupId>
 	<artifactId>castiel</artifactId>
 	<version>1.0</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr-runtime</artifactId>
+			<version>3.2</version>
+			<type>jar</type>
+		</dependency>
+	</dependencies>
 </project>
