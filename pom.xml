@@ -28,5 +28,11 @@
 			<version>3.2</version>
 			<type>jar</type>
 		</dependency>
+
+		<dependency>
+			<groupId>externals.java-ml</groupId>
+			<artifactId>java-ml</artifactId>
+			<version>0.1.7</version>
+			<type>jar</type>
 	</dependencies>
 </project>
