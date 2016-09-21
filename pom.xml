@@ -6,6 +6,19 @@
 	<artifactId>castiel</artifactId>
 	<version>1.0</version>
 
+	<repository>
+		<id>repo</id>
+		<releases>
+			<enabled>true</enabled>
+			<checksumPolicy>ignore</checksumPolicy>
+		</releases>
+
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+		<url>file://${project.basedir}/repo</url>
+	</repository>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.antlr</groupId>
