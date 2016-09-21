@@ -34,5 +34,6 @@
 			<artifactId>java-ml</artifactId>
 			<version>0.1.7</version>
 			<type>jar</type>
+		</dependency>
 	</dependencies>
 </project>
