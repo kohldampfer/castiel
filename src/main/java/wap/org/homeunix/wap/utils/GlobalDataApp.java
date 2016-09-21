@@ -145,7 +145,7 @@ public class GlobalDataApp {
             kernel.setExponent(1.0);           
             
             SMO svm = new weka.classifiers.functions.SMO();
-            svm.setBuildLogisticModels(false);
+            // svm.setBuildLogisticModels(false);
             svm.setC(1.0);
             svm.setChecksTurnedOff(false);
             svm.setDebug(false);
