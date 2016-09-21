@@ -9,6 +9,7 @@
 	<repositories>
 		<repository>
 			<id>repo</id>
+			<name>repo</name>
 			<releases>
 				<enabled>true</enabled>
 				<checksumPolicy>ignore</checksumPolicy>
@@ -34,6 +35,12 @@
 			<artifactId>java-ml</artifactId>
 			<version>0.1.7</version>
 			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.ac.waikato.cms.weka</groupId>
+			<artifactId>weka-stable</artifactId>
+			<version>3.8.0</version>
 		</dependency>
 	</dependencies>
 </project>
