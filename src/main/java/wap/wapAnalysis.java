@@ -535,12 +535,12 @@ public class wapAnalysis {
         }
         
         if (GlobalDataApp.args_flags[0] == 1){
-            System.out.println("\n     - Automatic correction: " + setBoldText + "no" + setPlainText);
+            System.out.println("\n     - Automatic correction: " + "no");
             if(GlobalDataApp.args_flags[4] == 1)
                 outFile.write("\n     - Automatic correction: no\n");
         }
         else{
-            System.out.println("\n     - Automatic correction: " + setBoldText + "yes" + setPlainText);
+            System.out.println("\n     - Automatic correction: " + "yes");
             if(GlobalDataApp.args_flags[4] == 1)
                 outFile.write("\n     - Automatic correction: yes\n");            
         }

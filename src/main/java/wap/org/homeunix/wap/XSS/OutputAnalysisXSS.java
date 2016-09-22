@@ -162,12 +162,12 @@ public class OutputAnalysisXSS {
         String setPlainText = "";
         String setBoldText = "";
         if (GlobalDataApp.isWindows.booleanValue() == false){
-            setPlainText = "\033[0;0m";
-            setBoldText = "\033[0;1m";
+            setPlainText = "";
+            setBoldText = "";
         }
         
-        System.out.println(setBoldText +"\n\n+ + + Type of Analysis: XSS");
-        System.out.println("     > Summary:" + setPlainText);
+        System.out.println("\n\n+ + + Type of Analysis: XSS");
+        System.out.println("     > Summary:");
         
         if(GlobalDataApp.args_flags[4] == 1){
             outFile.write("\n\n  + Type of Analysis: XSS\n");

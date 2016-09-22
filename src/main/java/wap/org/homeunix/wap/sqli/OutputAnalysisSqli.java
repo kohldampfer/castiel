@@ -156,8 +156,8 @@ public class OutputAnalysisSqli {
         String setPlainText = "";
         String setBoldText = "";
         if (GlobalDataApp.isWindows.booleanValue() == false){
-            setPlainText = "\033[0;0m";
-            setBoldText = "\033[0;1m";
+            setPlainText = "";
+            setBoldText = "";
         }
         
         System.out.println(setBoldText +"\n\n  + Type of Analysis: SQLI");
