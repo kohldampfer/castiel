@@ -40,7 +40,7 @@
 								${project.build.directory}/dependencies/
 							</outputDirectory>
 						</configuration>
-					</executions>
+					</execution>
 				</executions>
 			</plugin>
 		</plugins>
