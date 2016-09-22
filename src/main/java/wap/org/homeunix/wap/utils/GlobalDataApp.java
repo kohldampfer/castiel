@@ -74,7 +74,7 @@ public class GlobalDataApp {
   	} else {
   	  File f = new File("data" + File.separator + "dataset.data");
   	  System.out.println("Loading dataset " + f.getAbsolutePath());
-      data = FileHandler.loadDataset(f.getAbsolutePath(), 15, ",");
+      data = FileHandler.loadDataset(f, 15, ",");
 	  }
         
         
