@@ -198,11 +198,10 @@ public class OutputAnalysisCodeInj {
         
         if (vuu + fpp > 0){
             System.out.println("        - Time of analyse: " + diff_date_fidt);
-            System.out.println("        - Number of vulnerabilities detected: " + setBoldText + (vuu+fpp) + setPlainText);
-            System.out.println("           - Real vulnerabilities: " + setBoldText + vuu + setPlainText);
-            System.out.println("           - False positives: " + setBoldText + fpp + setPlainText);
-            System.out.println("        - Number of vulnerable files: " +
-                    setBoldText + GlobalDataCodeInj.MainListVulners.size() + setPlainText);
+            System.out.println("        - Number of vulnerabilities detected: " + (vuu+fpp));
+            System.out.println("           - Real vulnerabilities: " + vuu);
+            System.out.println("           - False positives: " + fpp);
+            System.out.println("        - Number of vulnerable files: " + GlobalDataCodeInj.MainListVulners.size());
             System.out.println("        - List of vulnerable files:");
             
             if(GlobalDataApp.args_flags[4] == 1){
@@ -340,12 +339,9 @@ public class OutputAnalysisCodeInj {
                 }
                 vuu_f -= fpp_f;
                 
-                System.out.println("        - Number of Vulnerabilities detected: " +
-                        setBoldText + lv.getListOfVulners().size() + setPlainText); 
-                System.out.println("           - Real Vulnerabilities: " +
-                        setBoldText + vuu_f + setPlainText);
-                System.out.println("           - False positives: " +
-                        setBoldText + fpp_f + setPlainText);
+                System.out.println("        - Number of Vulnerabilities detected: " + lv.getListOfVulners().size()); 
+                System.out.println("           - Real Vulnerabilities: " + vuu_f);
+                System.out.println("           - False positives: " + fpp_f);
                 if(GlobalDataApp.args_flags[4] == 1){
                     outFile.write("        - Number of Vulnerabilities detected: "+lv.getListOfVulners().size()+"\n");
                     outFile.write("           - Real Vulnerabilities: "+vuu+"\n");
