@@ -113,6 +113,7 @@ public class wapAnalysis {
             
             // Create AST
             try{
+                System.out.println("Start generating AST with file '" + input + "'");
                 buildAST ast = new buildAST(input, 1);
                 nodes = ast.getNodes();
             } catch (IOException e){
