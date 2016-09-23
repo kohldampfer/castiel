@@ -117,6 +117,7 @@ public class ManageFiles{
                     ManageFiles aux = new ManageFiles(l[i].toString());
                     if (aux.validExtension(l[i].toString(), 1) == true){
                         lista.add(l[i].toString());
+                        System.out.println("File added to project: " + l[i].toString());
                     }
                 }
                 if (l[i].isDirectory() == true){

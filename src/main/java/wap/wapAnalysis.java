@@ -84,12 +84,12 @@ public class wapAnalysis {
                 System.setProperty("base.dir", input);
             }
         }
-        //System.out.println("done");
+        System.out.println("done");
         
         int num = fileList.size();
-        //System.out.println("done\n");
+        System.out.println("done\n");
         System.out.println("\n    * Generating AST's ........................................................... ");
-        //System.out.println("done\n");
+        System.out.println("done\n");
         
         System.out.println("\n    * Taint Analysis .............................................................");
         
@@ -500,8 +500,8 @@ public class wapAnalysis {
         }
         
         if (type_analyse.equals("project") == true){   
-            System.out.println(setBoldText + "\n\n PROJECT ANALYSIS: ");
-            System.out.println("\n  + Global Summary:" + setPlainText);
+            System.out.println("\n\n PROJECT ANALYSIS: ");
+            System.out.println("\n  + Global Summary:");
             System.out.println("     - Project directory: " + System.getProperty("base.dir"));
             
             if(GlobalDataApp.args_flags[4] == 1){
@@ -511,8 +511,8 @@ public class wapAnalysis {
             }
         }
         else{
-            System.out.println(setBoldText + "\n\n FILE(S) ANALYSIS");
-            System.out.println("\n  + Global Summary:" + setPlainText);
+            System.out.println("\n\n FILE(S) ANALYSIS");
+            System.out.println("\n  + Global Summary:");
             
             if(GlobalDataApp.args_flags[4] == 1){
                 outFile.write("\n\n FILE(S) ANALYSIS\n");
