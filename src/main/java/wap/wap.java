@@ -52,13 +52,6 @@ public class wap {
             }
         } catch (IOException e){}
          
-        
-        System.out.println("\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
-        System.out.println("*                           WAP - Web Application Protection                          *");
-        System.out.println("*                    Source Code Static Analysis & Data Mining Tool                   *");
-        System.out.println("*                                     version 2.1                                   *");
-        System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        
         switch (args.length){
             case 0:{
                 System.out.println("\nProject Directory or Filename not specified!!!");
@@ -72,8 +65,8 @@ public class wap {
                     String setPlainText = "";
                     String setBoldText = "";
                     if (GlobalDataApp.isWindows.booleanValue() == false){
-                        setPlainText = "\033[0;0m";
-                        setBoldText = "\033[0;1m";
+                        setPlainText = "";
+                        setBoldText = "";
                     }
                         
                     System.out.println(setBoldText + "Usage:");
