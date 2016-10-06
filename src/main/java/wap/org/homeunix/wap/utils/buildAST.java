@@ -49,17 +49,22 @@ public class buildAST {
        
             // Create input stream from standard input
             ANTLRInputStream input = new ANTLRInputStream(is);
+            System.out.println(" --> Create input stream from standard input");
             // Create a lexer attached to that input stream
             PhpLexer lexer = new PhpLexer(input);
+            System.out.println(" --> Create a lexer attached to that input stream.");
             // Create a stream of tokens pulled from the lexer
             CommonTokenStream tokens = new CommonTokenStream(lexer);
+            System.out.println(" --> Create a stream of tokens pulled from the lexer.");
 
             // Create a parser attached to the token stream
             PhpParser parser = new PhpParser(tokens);
             RuleReturnScope r = parser.compilationUnit();   // launch parser
+            System.out.println(" --> Create a parser attached to the token  stream.");
 
             // Get AST from result of parser
             CommonTree t = (CommonTree)r.getTree();
+            System.out.println(" --> Get AST from result of parser.");
             //CommonTreeNodeStream nodes = new CommonTreeNodeStream(t);
             this.nodes = new CommonTreeNodeStream(t);
             nodes.setTokenStream(tokens);
