@@ -6,8 +6,8 @@ package org.homeunix.wap.utils;
 
 import org.homeunix.wap.php.parser.PhpParser;
 import org.homeunix.wap.php.parser.PhpLexer;
-import org.antlr.runtime.*;
-import org.antlr.runtime.tree.*;
+import org.antlr4.runtime.*;
+import org.antlr4.runtime.tree.*;
 import java.io.*;
 
 /**
