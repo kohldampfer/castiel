@@ -30,8 +30,8 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.tree.CommonTreeNodeStream;
+import org.antlr.runtime.RecognitionException;
+import org.antlr.runtime.tree.CommonTreeNodeStream;
 
 /**
  *

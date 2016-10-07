@@ -65,8 +65,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.antlr</groupId>
-			<artifactId>antlr4-runtime</artifactId>
-			<version>4.5.3</version>
+			<artifactId>antlr-runtime</artifactId>
+			<version>3.5.2</version>
 			<type>jar</type>
 		</dependency>
 
