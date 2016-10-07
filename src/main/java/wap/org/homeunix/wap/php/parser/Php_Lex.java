@@ -3,7 +3,7 @@
 package org.homeunix.wap.php.parser;
 
 
-import org.antlr4.runtime.*;
+import org.antlr.v4.runtime.*;
 import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;

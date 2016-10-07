@@ -6,8 +6,8 @@ package org.homeunix.wap.sqli;
 
 import org.homeunix.wap.php.parser.Sqli;
 import org.homeunix.wap.table.tainted.UntaintedTable;
-import org.antlr4.runtime.*;
-import org.antlr4.runtime.tree.*;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
 import java.io.*;
 import java.util.*;
 import java.util.logging.Level;

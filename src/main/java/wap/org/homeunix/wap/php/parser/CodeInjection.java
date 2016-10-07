@@ -9,8 +9,8 @@
     import java.io.*;
 
 
-import org.antlr4.runtime.*;
-import org.antlr4.runtime.tree.*;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
 import java.util.Stack;
 import java.util.List;
 import java.util.ArrayList;
