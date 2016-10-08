@@ -8,6 +8,22 @@
 
 	<build>
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+					<execution>
+						<id>purge-local-dependencies</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>purge-local-repository</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -22,6 +38,40 @@
 						</manifest>
 					</archive>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.antlr</groupId>
+				<artifactId>antlr3-maven-plugin</artifactId>
+				<version>3.5.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>antlr</goal>
+						</goals>
+						<configuration>
+							<libDirectory>src/main/antlr3</libDirectory>
+							<verbose>true</verbose>
+							<debug>true</debug>
+							<trace>true</trace>
+<!--
+							<outputDirectory>src/main/antlr3</outputDirectory>
+-->
+						</configuration>
+					</execution>
+					<execution>
+						<id>moveFiles</id>
+						<phase>compile</phase>
+						<configuration>
+							<tasks>
+								<copy todir="target/maven-generated-classes/antlr3" overwrite="true" verbose="true" failonerror="true">
+									<fileset dir="target/maven-generated-classes/antlr3/${basedir}/**" includes="*.java" />
+								</copy>
+							</tasks>
+							<verbose>true</verbose>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
