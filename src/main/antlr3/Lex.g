@@ -13,12 +13,11 @@
 
 lexer grammar Lex;
 
-/*
+/* 
 @header{
 package org.homeunix.wap.php.parser;
 }
 */
-
 
 @lexer::header {
 package org.homeunix.wap.php.parser;

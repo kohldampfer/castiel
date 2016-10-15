@@ -39,6 +39,61 @@
 					</archive>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+			<!--
+				<groupId>org.apache.maven.plugins</groupId>
+			-->
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>copy-antlr-files</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						
+						<configuration>
+							<verbose>true</verbose>
+							<debug>true</debug>
+							<outputDirectory>${basedir}/target/generated-sources/antlr3</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/target/generated-sources/antlr3${basedir}/src/main/antlr3</directory>
+									<includes>
+										<include>PhpLexer.java</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target name="deleteResources">
+								<delete>
+									<fileset dir="${basedir}/target/generated-sources/antlr3${basedir}" includes="**/*.java" />
+								</delete>
+								<exec dir="${basedir}" executable="${basedir}/add_package.sh" failonerror="true" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
 
 			<plugin>
 				<groupId>org.antlr</groupId>
@@ -51,26 +106,26 @@
 						</goals>
 						<configuration>
 							<libDirectory>src/main/antlr3</libDirectory>
-							<verbose>true</verbose>
-							<debug>true</debug>
-							<trace>true</trace>
-<!--
-							<outputDirectory>src/main/antlr3</outputDirectory>
--->
+							<verbose>false</verbose>
+							<debug>false</debug>
+							<trace>false</trace>
+							<outputDirectory>target/generated-sources/antlr3</outputDirectory>
 						</configuration>
 					</execution>
+					<!--
 					<execution>
 						<id>moveFiles</id>
-						<phase>compile</phase>
+						<phase>validate</phase>
 						<configuration>
 							<tasks>
-								<copy todir="target/maven-generated-classes/antlr3" overwrite="true" verbose="true" failonerror="true">
-									<fileset dir="target/maven-generated-classes/antlr3/${basedir}/**" includes="*.java" />
+								<copy todir="target/generated-source/antlr3" overwrite="true" verbose="true" failonerror="true">
+									<fileset dir="target/generated-source/antlr3/${basedir}/**" includes="*.java" />
 								</copy>
 							</tasks>
 							<verbose>true</verbose>
 						</configuration>
 					</execution>
+					-->
 				</executions>
 			</plugin>
 
