@@ -75,7 +75,34 @@ public class TestPhpWithEchoCommand {
 	}
 
 	@Test
-	public void testReadFileAndTestTree() {
+	public void testReadFileAndTestTree() throws IOException,FileNotFoundException,
+		org.antlr.runtime.RecognitionException {
 
+		String fileName = "echo_php.php";
+
+		InputStream is = new FileInputStream(fileName);
+		ANTLRInputStream input = new ANTLRInputStream(is);
+		PhpLexer lexer = new PhpLexer(input);
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+		PhpParser parser = new PhpParser(tokens);
+		RuleReturnScope r = parser.compilationUnit();
+
+		CommonTree tree = (CommonTree)r.getTree();
+		Assert.assertEquals(2, tree.getChildCount());
+
+		System.out.println("Check child 1.");
+		CommonTree child1 = (CommonTree)tree.getChild(0);
+		Assert.assertEquals("<?php", child1.toString());
+
+		System.out.println("Check child 2.");
+		CommonTree child2 = (CommonTree)tree.getChild(1);
+		Assert.assertEquals("echo", child2.toString());
+		Assert.assertEquals(1, child2.getChildCount());
+
+		System.out.println("Check child 1 from child 2");
+		CommonTree child1fromchild2 = (CommonTree)child2.getChild(0);
+		Assert.assertEquals("\"Hallo\"", child1fromchild2.toString());
+		Assert.assertEquals(0, child1fromchild2.getChildCount());
 	}
 }
