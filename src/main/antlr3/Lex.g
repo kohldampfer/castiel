@@ -89,6 +89,7 @@ package org.homeunix.wap.php.parser;
     USE: 'use';
     BREAK: 'break';
     CONTINUE: 'continue';
+    ACCENT_GRAVE: '\u0060';
 
 
 
@@ -115,15 +116,21 @@ PhpStatement
 fragment
 IgnoreStmContents
     : {
-    try{
+	try {
+		// System.out.println("At IgnoreStmContents.");
+		char a = (char)input.LA(1);
 
-		char a = (char)input.LA(1);	
-        while(a!=';' || input.LA(1)!='\n'){
-	    a = (char)input.LA(1);
-            input.consume();
-        }
-        input.consume();
-       } catch (Exception e){}
+// 		if (java.lang.Character.getNumericValue(input.LA(1)) != -1) {
+	        	while(a!=';' || input.LA(1)!='\n'){
+				a = (char)input.LA(1);
+				input.consume();
+        		}
+//		}
+
+		input.consume();
+
+	} catch (Exception e) {
+	}
       }
     ;
 
