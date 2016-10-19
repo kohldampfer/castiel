@@ -1,25 +1,15 @@
-import junit.framework.Assert;
-import org.junit.Test;
-import java.io.*;
-import org.homeunix.wap.php.parser.*;
-import org.antlr.runtime.*;
-import org.antlr.runtime.tree.*;
-import java.util.*;
-
-public class TestNotEndingPhpFile1 {
+import junit.framework.Assert; import org.junit.Test; import java.io.*; import org.homeunix.wap.php.parser.*; import org.antlr.runtime.*; import 
+org.antlr.runtime.tree.*; import java.util.*; public class TestNotEndingPhpFile1 {
 	@Test
 	public void testReadFileAndCheckTree() throws IOException,FileNotFoundException,
 		org.antlr.runtime.RecognitionException {
 		
 		String fileName = "filter1.php";
-
 		InputStream is = new FileInputStream(fileName);
 		ANTLRInputStream input = new ANTLRInputStream(is);
 		PhpLexer lexer = new PhpLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
-
 		PhpParser parser = new PhpParser(tokens);
-
 		RuleReturnScope r = parser.compilationUnit();
 
 		CommonTree tree = (CommonTree)r.getTree();
