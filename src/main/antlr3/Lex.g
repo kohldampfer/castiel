@@ -106,6 +106,7 @@ FirstBodyString
 
 PhpStatement
     : IgnoreStmContents 
+    | '\u0060' IgnoreStmContents
     | ('break' | 'continue' | 'throw' | 'use' ) IgnoreStmContents 
     | 'interface' IgnoreStmInterface
     | 'implements' IgnoreStmImplements
@@ -120,12 +121,10 @@ IgnoreStmContents
 		// System.out.println("At IgnoreStmContents.");
 		char a = (char)input.LA(1);
 
-// 		if (java.lang.Character.getNumericValue(input.LA(1)) != -1) {
-	        	while(a!=';' || input.LA(1)!='\n'){
-				a = (char)input.LA(1);
-				input.consume();
-        		}
-//		}
+		while(a!=';' || input.LA(1)!='\n'){
+			a = (char)input.LA(1);
+			input.consume();
+		}
 
 		input.consume();
 
@@ -316,7 +315,7 @@ HereDoc
     ;
 
 UnquotedString
-   : ('a'..'z' | 'A'..'Z' | '_')  ('a'..'z' | 'A'..'Z' | '0'..'9' | '_')*
+   : ('a'..'z' | 'A'..'Z' | '_' | '\\' )  ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' )* ( '\\' )? ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' )*
    ;
    
 fragment 
